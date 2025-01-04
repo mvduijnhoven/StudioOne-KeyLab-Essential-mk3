@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DeviceDefinition 
+    vendor="Arturia"
+    name="KeyLab Essentials"
+    classID="{E244AB12-514E-4A78-8674-0F517DC5E705}"
+    category="Keyboard"
+
+    nativeCode="JSKeyboardDevice" 
+	classFile="KeyLabEssentialsMidiDevice.js"
+	classFile.functionName="createKeyLabEssentialsDeviceInstance"
+
+    surfaceFile="KeyLab Essentials.surface.xml"
+	scriptFile="KeyLabEssentialsComponent.js"
+	scriptFile.functionName="createKeyLabEssentialsComponentInstance"
+/>

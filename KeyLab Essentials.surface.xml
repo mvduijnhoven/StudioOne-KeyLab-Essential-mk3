@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ControlSurface>
+	<Controls>
+		<Control name="knob1" title="Knob 1" type="knob" options="receive transmit public"/>
+		<Control name="knob2" title="Knob 2" type="knob" options="receive transmit public"/>
+		<Control name="knob3" title="Knob 3" type="knob" options="receive transmit public"/>
+		<Control name="knob4" title="Knob 4" type="knob" options="receive transmit public"/>
+		<Control name="knob5" title="Knob 5" type="knob" options="receive transmit public"/>
+		<Control name="knob6" title="Knob 6" type="knob" options="receive transmit public"/>
+		<Control name="knob7" title="Knob 7" type="knob" options="receive transmit public"/>
+		<Control name="knob8" title="Knob 8" type="knob" options="receive transmit public"/>
+		<Control name="knob9" title="Knob 9" type="knob" options="receive transmit public"/>
+		<Control name="fader1" title="Fader 1" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#69"/>
+		</Control>
+		<Control name="fader2" title="Fader 2" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#6A"/>
+		</Control>
+		<Control name="fader3" title="Fader 3" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#6B"/>
+		</Control>
+		<Control name="fader4" title="Fader 4" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#6C"/>
+		</Control>
+		<Control name="fader5" title="Fader 5" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#6D"/>
+		</Control>
+		<Control name="fader6" title="Fader 6" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#6E"/>
+		</Control>
+		<Control name="fader7" title="Fader 7" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#6F"/>
+		</Control>
+		<Control name="fader8" title="Fader 8" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#70"/>
+		</Control>
+		<Control name="fader9" title="Fader 9" type="fader" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#71"/>
+		</Control>
+		<Control name="stopButton" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#14"/>
+		</Control>
+		<Control name="playButton" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#15"/>
+		</Control>
+		<Control name="recordButton" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#16"/>
+		</Control>
+		<Control name="tapButton" title="Tap" type="knob" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#17"/>
+		</Control>
+		<Control name="loopButton" title="Loop" type="button" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#18"/>
+		</Control>
+		<Control name="rewindButton" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#19"/>
+		</Control>
+		<Control name="ffButton" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#1A"/>
+		</Control>
+		<Control name="metronomeButton" title="Metronome" type="button" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#1B"/>
+		</Control>
+		<Control name="saveButton" title="Save" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#28"/>
+		</Control>
+		<Control name="quantizeButton" title="Quantize" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#29"/>
+		</Control>
+		<Control name="undoButton" title="Undo" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#2A"/>
+		</Control>
+		<Control name="redoButton" title="Redo" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#2B"/>
+		</Control>
+		<Control name="modWheel" title="Mod Wheel" type="knob" options="receive public">
+			<MidiMessage status="#B0" channel="0" address="#1"/>
+		</Control>
+		<Control name="contextButton0" title="Ctx 0" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#2C"/>
+		</Control>
+		<Control name="contextButton1" title="Ctx 1" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#2D"/>
+		</Control>
+		<Control name="contextButton2" title="Ctx 2" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#2E"/>
+		</Control>
+		<Control name="contextButton3" title="Ctx 3" type="trigger" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#2F"/>
+		</Control>
+		<Control name="knobMain" title="Main Knob" type="relative" options="receive">
+			<MidiMessage status="#B0" channel="0" address="#74"/>
+		</Control>
+		<Control name="line1Text"  type="textdisplay" options="transmit"/>
+		<Control name="line2Text"  type="textdisplay" options="transmit"/>
+		<Control name="contextLED1" options="transmit"/>
+		<Control name="loopLED" options="transmit"/>
+		<Control name="metronomeLED" options="transmit"/>
+	</Controls>
+	<Mappings>
+		<DeviceMapping device="TransportPanel">
+			<Command control="stopButton" command.category="Transport" command.name="Stop"/>
+			<Command control="playButton" command.category="Transport" command.name="Start"/>
+			<Command control="recordButton" command.category="Transport" command.name="Record"/>
+			<Command control="tapButton" command.category="Transport" command.name="Tap Tempo"/>
+			<Command control="loopButton" command.category="Transport" command.name="Toggle Loop"/>
+			<Value control="loopLED" param="loop"/>
+			<Command control="rewindButton" command.category="Transport" command.name="Rewind"/>
+			<Command control="ffButton" command.category="Transport" command.name="Forward"/>
+			<Command control="saveButton" command.category="File" command.name="Save"/>
+			<Command control="quantizeButton" command.category="Event" command.name="Quantize"/>
+			<Command control="undoButton" command.category="Edit" command.name="Undo"/>
+			<Command control="redoButton" command.category="Edit" command.name="Redo"/>
+			<Command control="contextButton2" command.category="Navigation" command.name="Previous Track"/>
+			<Command control="contextButton3" command.category="Navigation" command.name="Next Track"/>
+		</DeviceMapping>
+		<DeviceMapping device="Metronome">
+			<Toggle control="metronomeButton" param="clickOn"/>
+			<Value control="metronomeLED" param="clickOn"/>
+		</DeviceMapping>
+		<DeviceMapping device="MixerConsole" name="MixerMapping">
+			<ScrollBank target="FollowBank" pagesize="1" name="MixerBank">
+				<Strip>
+					<String control="line1Text" param="label"/>
+					<Toggle control="contextButton1" param="recordArmed"/>
+					<Value  control="contextLED1" param="recordArmed"/>
+				</Strip>
+			</ScrollBank>
+		</DeviceMapping>
+	</Mappings>
+</ControlSurface>
