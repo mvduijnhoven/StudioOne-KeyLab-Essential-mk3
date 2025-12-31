@@ -1,0 +1,12 @@
+Arturia KeyLab Essentials
+
+This device definition provides: 
+- 61-key keyboard support (via standard MIDI Note messages)
+- 9 knobs (knob1..knob9)
+- 9 faders (fader1..fader9)
+- 8 velocity-sensitive pads (pad[0] .. pad[7]) with LED feedback
+- Transport and context buttons
+
+Notes:
+- To enable the skin background, place your device image into `skin/images/DeviceBackground.png` (recommended name: KeyLab Essentials.png or DeviceBackground.png).
+- The device supports visual feedback and display updates (set in .device file).

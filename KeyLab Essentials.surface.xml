@@ -37,6 +37,35 @@
 		<Control name="fader9" title="Fader 9" type="fader" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#71"/>
 		</Control>
+		
+		<!-- Pads bottom row -->
+		<Control name="pad[0]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#24" options="through"/>
+		</Control>
+		<Control name="pad[1]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#25" options="through"/>
+		</Control>
+		<Control name="pad[2]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#26" options="through"/>
+		</Control>
+		<Control name="pad[3]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#27" options="through"/>
+		</Control>
+
+		<!-- Pads top row -->
+		<Control name="pad[4]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#28" options="through"/>
+		</Control>
+		<Control name="pad[5]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#29" options="through"/>
+		</Control>
+		<Control name="pad[6]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#2A" options="through"/>
+		</Control>
+		<Control name="pad[7]" type="trigger" options="receive transmit public">
+			<MidiMessage status="NoteTrigger" channel="10" address="#2B" options="through"/>
+		</Control>
+
 		<Control name="stopButton" type="trigger" options="receive">
 			<MidiMessage status="#B0" channel="0" address="#14"/>
 		</Control>
@@ -73,31 +102,38 @@
 		<Control name="redoButton" title="Redo" type="trigger" options="receive">
 			<MidiMessage status="#B0" channel="0" address="#2B"/>
 		</Control>
-		<Control name="modWheel" title="Mod Wheel" type="knob" options="receive public">
+		<Control name="controlb0001" title="Control31" type="knob" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#1"/>
 		</Control>
-		<Control name="contextButton0" title="Ctx 0" type="trigger" options="receive">
+		<Control name="contextButton0" title="Ctx 0" type="trigger" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#2C"/>
 		</Control>
-		<Control name="contextButton1" title="Ctx 1" type="trigger" options="receive">
+		<Control name="contextButton1" title="Ctx 1" type="trigger" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#2D"/>
 		</Control>
-		<Control name="contextButton2" title="Ctx 2" type="trigger" options="receive">
+		<Control name="contextButton2" title="Ctx 2" type="trigger" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#2E"/>
 		</Control>
-		<Control name="contextButton3" title="Ctx 3" type="trigger" options="receive">
+		<Control name="contextButton3" title="Ctx 3" type="trigger" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#2F"/>
 		</Control>
-		<Control name="knobMain" title="Main Knob" type="relative" options="receive">
+		<Control name="knobMain" title="Main Knob" type="relative" options="receive public">
 			<MidiMessage status="#B0" channel="0" address="#74"/>
 		</Control>
-		<Control name="line1Text"  type="textdisplay" options="transmit"/>
-		<Control name="line2Text"  type="textdisplay" options="transmit"/>
+		<Control name="line1Text"  type="textdisplay" options="transmit public"/>
+		<Control name="line2Text"  type="textdisplay" options="transmit public"/>
 		<Control name="contextLED1" options="transmit"/>
 		<Control name="loopLED" options="transmit"/>
 		<Control name="metronomeLED" options="transmit"/>
 	</Controls>
 	<Mappings>
+		<PadSection name="PadSectionElement" rows="2" roles="launcherinput">
+			<foreach variable="$i" count="8">
+				<Pad control="pad[$i]">
+				</Pad>
+			</foreach>
+		</PadSection>
+
 		<DeviceMapping device="TransportPanel">
 			<Command control="stopButton" command.category="Transport" command.name="Stop"/>
 			<Command control="playButton" command.category="Transport" command.name="Start"/>
@@ -127,5 +163,13 @@
 				</Strip>
 			</ScrollBank>
 		</DeviceMapping>
+		<!--GenericMapping name="GenericMapping">
+			<Bank>
+				<Strip name="knob1">
+					<Value control="knob1" param="value"/>
+					<ParamInvoke param="value" onChanged="onGenericMappingParamValueChangedByKnob(1)" options="string"/>
+				</Strip>
+			</Bank>
+		</GenericMapping-->
 	</Mappings>
 </ControlSurface>

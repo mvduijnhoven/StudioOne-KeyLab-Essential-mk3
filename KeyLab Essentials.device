@@ -12,4 +12,17 @@
     surfaceFile="KeyLab Essentials.surface.xml"
 	scriptFile="KeyLabEssentialsComponent.js"
 	scriptFile.functionName="createKeyLabEssentialsComponentInstance"
+
+	imageFile="KeyLab Essentials.png"
+	textFile="KeyLab Essentials.txt"
+
+	skinFile="skin/"
+	formName="KeyLabEssentials"
+
+	focusMappingPageCount="4"
+	globalMappingPageCount="4"
+
+	detectorPortName="KL Essential 61 mk3 MIDI"
+	feedbackSupported="1"
+	hostDataFile="KeyLab Essentials.surfacedata"
 />

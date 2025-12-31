@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Skin>
+	<Externals>
+		<External name="PresonusUI"/>
+	</Externals>
+
+	<Resources>
+		<!-- Background: place your device image here as images/DeviceBackground.png -->
+		<Image name="DeviceBackground" url="images/DeviceBackground.png"/>
+
+		<!-- Basic knob indicator shape embedded -->
+		<ShapeImage name="KnobIndicator" url="KnobIndicatorShape" frames="embedded"/>
+
+		<!-- Pad shape -->
+		<ShapeImage name="PadShape" url="PadShape" frames="embedded"/>
+
+		<Color name="TextColor" value="hsl(0,0,100)"/>
+		<Image name="FaderBack" url="images/faderback.png"/>        
+		<Image name="FaderHandle" url="images/faderhandle.png"/>
+	</Resources>
+
+	<Styles>
+		<Style name="Fader">
+			<Image name="vBack" image="FaderBack"/>
+			<Image name="vHandle" image="FaderHandle"/>
+		</Style>		
+		<Style name="Text">
+			<Font  name="textfont"   themeid="PresonusUI" size="10"/>
+			<Color name="textcolor"  color="#9fa6ae" />
+		</Style>
+		<Style name="DisplayText">
+			<Font  name="textfont"   themeid="PresonusUI" size="10"/>
+            <Align name="textalign" align="hcenter"/>
+			<Color name="textcolor"  color="#67708f" />
+		</Style>
+		<Style name="FaderText">
+			<Font  name="textfont"   themeid="PresonusUI" size="10"/>
+            <Align name="textalign" align="hcenter"/>
+			<Color name="textcolor"  color="#9fa6ae" />
+		</Style>
+		<Style name="PadText">
+			<Font  name="textfont"   themeid="PresonusUI" size="10"/>
+			<Color name="textcolor"  color="#7B97D6" />
+		</Style>
+	</Styles>
+
+	<Shapes>
+		<Shape name="KnobIndicatorShape">
+			<Shape name="normal" size="0,0,40,40">
+				<Circle cx="20" cy="20" r="18" Brush.color="hsl(0,0,20)"/>
+				<Circle cx="20" cy="20" r="14" Brush.color="hsl(0,0,40)"/>
+				<Polygon points="20,6 23,12 17,12" Brush.color="hsl(200,100,60)"/>
+			</Shape>
+		</Shape>
+
+		<Shape name="PadShape">
+			<Shape name="normal" size="0,0,94,94">
+				<Rectangle style="fill stroke tiled" size="0,0,94,94" Brush.color="#171217"  Pen.color="#7B97D6" stroke-width="4" radius="3"/>
+				<Rectangle x="4" y="4" width="56" height="56" Brush.color="hsl(0,0,10)"/>
+			</Shape>
+		</Shape>
+	</Shapes>
+
+	<Forms>
+		<Form name="KeyLabEssentials" image="DeviceBackground" size="0,0,1600,360" datatarget="ControlSurface/Editor/ControlList">
+			<using controller="ControlSurface/Editor">
+				<ImageView image="DeviceBackground"/>
+
+				<!-- Knobs: map to surface knob1..knob9 -->
+				<using controller="knob1">
+					<Knob name="controlValue" size="1040,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1029,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1029,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob2">
+					<Knob name="controlValue" size="1100,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1089,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1089,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob3">
+					<Knob name="controlValue" size="1160,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1149,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1149,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob4">
+					<Knob name="controlValue" size="1220,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1209,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1209,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob5">
+					<Knob name="controlValue" size="1280,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1269,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1269,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob6">
+					<Knob name="controlValue" size="1340,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1329,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1329,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob7">
+					<Knob name="controlValue" size="1400,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1389,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1389,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob8">
+					<Knob name="controlValue" size="1460,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1449,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1449,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="knob9">
+					<Knob name="controlValue" size="1520,20,48,48" image="KnobIndicator"/>
+                    <TextBox name="paramTitle" 	size="1509,78,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1509,96,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+
+				<!-- Pads -->
+				<using controller="pad[0]">
+					<Button name="controlValue" size="28,190,94,94" image="PadShape"/>
+    				<TextBox name="controlValue" size="38,269,60,14" options="fittext transparent" style="PadText"/>
+				</using>
+				<using controller="pad[1]">
+					<Button name="controlValue" size="134,190,94,94" image="PadShape"/>
+				</using>
+				<using controller="pad[2]">
+					<Button name="controlValue" size="240,190,94,94" image="PadShape"/>
+				</using>
+				<using controller="pad[3]">
+					<Button name="controlValue" size="346,190,94,94" image="PadShape"/>
+				</using>
+				<using controller="pad[4]">
+					<Button name="controlValue" size="28,22,94,94" image="PadShape"/>
+				</using>
+				<using controller="pad[5]">
+					<Button name="controlValue" size="134,22,94,94" image="PadShape"/>
+				</using>
+				<using controller="pad[6]">
+					<Button name="controlValue" size="240,22,94,94" image="PadShape"/>
+				</using>
+				<using controller="pad[7]">
+					<Button name="controlValue" size="346,22,94,94" image="PadShape"/>
+				</using>
+
+				<!-- Faders 1..9 -->
+				<using controller="fader1">
+					<Slider name="controlValue" size="1040,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1029,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1029,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader2">
+					<Slider name="controlValue" size="1100,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1089,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1089,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader3">
+					<Slider name="controlValue" size="1160,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1149,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1149,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader4">
+					<Slider name="controlValue" size="1220,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1209,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1209,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader5">
+					<Slider name="controlValue" size="1280,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1269,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1269,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader6">
+					<Slider name="controlValue" size="1340,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1329,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1329,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader7">
+					<Slider name="controlValue" size="1400,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1389,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1389,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader8">
+					<Slider name="controlValue" size="1460,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1449,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1449,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+				<using controller="fader9">
+					<Slider name="controlValue" size="1520,180,38,100" style="Fader" options="vertical transparent directupdate"/>
+                    <TextBox name="paramTitle" 	size="1509,290,60,14" options="fittext transparent" style="FaderText"/>
+    				<TextBox name="controlValue" size="1509,308,60,14" options="fittext transparent" style="FaderText"/>
+				</using>
+
+				<!-- Display lines -->
+				<using controller="line1Text">
+					<TextBox name="controlValue" size="821,75,160,20" options="transparent" style="DisplayText"/>
+				</using>
+				<using controller="line2Text">
+					<TextBox name="controlValue" size="821,100,160,20" options="transparent" style="DisplayText"/>
+				</using>
+			</using>
+		</Form>
+	</Forms>
+
+	<Aliases>
+		<Alias name="StdLabel">
+			<Attributes font="Arial" fontSize="11" Brush.color="TextColor"/>
+		</Alias>
+	</Aliases>
+</Skin>
